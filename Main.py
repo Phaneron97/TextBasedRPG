@@ -15,6 +15,7 @@ def PrintPlayerPos():
 def PrintWallError():
     print("You reached the wall of the room you're in")
 
+
 # TODO: Check every door instead of only door[0]
 def CheckDoorEvent():
     if player.current_cell_x == room1.door_list[0].cell_x and player.current_cell_y == room1.door_list[0].cell_y:
