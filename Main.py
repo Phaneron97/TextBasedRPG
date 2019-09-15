@@ -1,11 +1,12 @@
 from Classes import *
-import os
 
 # Objects here
 player = Player(1, 1)
 room1 = Room(3, 3)
+room2 = Room(5, 5)
 
-counter = 0
+# Locally used variables here
+moving = True
 
 
 # TODO: Run methods from Methods.py
@@ -20,26 +21,17 @@ def PrintWallError():
 
 # TODO: Check every door instead of only door[0]
 def CheckDoorEvent():
-    counter = 0
+    check_door_counter = 0
     for doors in room1.door_list:
-        if player.current_cell_x == room1.door_list[counter].cell_x and player.current_cell_y == room1.door_list[counter].cell_y:
-            print("There is a door close by")
+        if \
+                player.current_cell_x == room1.door_list[check_door_counter].cell_x and \
+                player.current_cell_y == room1.door_list[check_door_counter].cell_y:
+            print("You found a door! Do you want to enter?")
         else:
             print("Nothing found")
-        counter += 1
-    counter = 0
+        check_door_counter += 1
 
 
-
-# Print doors in room
-# i = 1
-# for x in room1.door_list:
-#     print("door " + str(i) + " = [" + str(x.cell_x) + ", " + str(x.cell_y) + "]")
-#     i = i + 1
-
-# print("enter a direction to go in")
-
-moving = True
 while moving:
     # clear()
     i = 1
@@ -52,7 +44,6 @@ while moving:
         if player.current_cell_y <= room1.size_y:  # if players Y pos is smaller then the room Y
             CheckDoorEvent()
             PrintPlayerPos()  # Successfully moved in new direction
-
         else:
             player.current_cell_y -= 1  # Revert move to new direction to old position
             PrintWallError()
