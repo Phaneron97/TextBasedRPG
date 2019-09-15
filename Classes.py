@@ -5,7 +5,7 @@ class Room:
     def __init__(self, size_x, size_y):
         self.size_x = size_x
         self.size_y = size_y
-        self.door_amount = random.randint(2, 2)  # Changed for ease of use
+        self.door_amount = random.randint(1, 1)  # Changed for ease of use
         self.door_list = []
 
         count = 0
