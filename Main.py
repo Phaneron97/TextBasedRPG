@@ -5,8 +5,10 @@ import os
 player = Player(1, 1)
 room1 = Room(3, 3)
 
+counter = 0
 
-# TODO: run methods from Methods.py
+
+# TODO: Run methods from Methods.py
 # Methods here
 def PrintPlayerPos():
     print("player = [" + str(player.current_cell_x) + ", " + str(player.current_cell_y) + "]")
@@ -18,14 +20,15 @@ def PrintWallError():
 
 # TODO: Check every door instead of only door[0]
 def CheckDoorEvent():
-    if player.current_cell_x == room1.door_list[0].cell_x and player.current_cell_y == room1.door_list[0].cell_y:
-        print("There is a door close by")
-    else:
-        print("Nothing found")
+    counter = 0
+    for doors in room1.door_list:
+        if player.current_cell_x == room1.door_list[counter].cell_x and player.current_cell_y == room1.door_list[counter].cell_y:
+            print("There is a door close by")
+        else:
+            print("Nothing found")
+        counter += 1
+    counter = 0
 
-
-# TODO: Method to check events per cell position
-# Method here
 
 
 # Print doors in room
@@ -75,7 +78,6 @@ while moving:
             CheckDoorEvent()
             PrintPlayerPos()
         else:
-            player.current_cell_x -= 1
             player.current_cell_x -= 1
             PrintWallError()
     if direction == "quit":
