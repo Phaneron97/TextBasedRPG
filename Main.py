@@ -2,8 +2,17 @@ from Classes import *
 
 # Objects here
 player = Player(1, 1)
-room1 = Room(3, 3)
-room2 = Room(5, 5)
+
+
+
+# room1 = Room(3, 3)
+# room2 = Room(5, 5)
+
+# TODO: instance new rooms with loop
+# rooms = [Room for i in range(5)]
+# for room in rooms:
+#     rooms.append(room)
+#     print(rooms[i])
 
 # Locally used variables here
 moving = True
@@ -19,10 +28,10 @@ def PrintWallError():
     print("You reached the wall of the room you're in")
 
 
-# TODO: Check every door instead of only door[0]
+# TODO: Check every room instead of room1
 def CheckDoorEvent():
     check_door_counter = 0
-    for doors in room1.door_list:
+    for _ in room1.door_list:
         if \
                 player.current_cell_x == room1.door_list[check_door_counter].cell_x and \
                 player.current_cell_y == room1.door_list[check_door_counter].cell_y:
@@ -32,6 +41,7 @@ def CheckDoorEvent():
         check_door_counter += 1
 
 
+# TODO:
 while moving:
     # clear()
     i = 1
