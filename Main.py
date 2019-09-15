@@ -25,7 +25,6 @@ for x in room1.door_list:
 
 moving = True
 while moving:
-
     direction = input("> ")
     if direction == "w":
         player.current_cell_y += 1
@@ -34,7 +33,6 @@ while moving:
         else:
             player.current_cell_y -= 1  # Revert move to new direction to old position
             PrintWallError()
-
     if direction == "a":
         player.current_cell_x -= 1
         if player.current_cell_x >= 1:
@@ -42,7 +40,6 @@ while moving:
         else:
             player.current_cell_x += 1
             PrintWallError()
-
     if direction == "s":
         player.current_cell_y -= 1
         if player.current_cell_y >= 1:
@@ -50,7 +47,6 @@ while moving:
         else:
             player.current_cell_y += 1
             PrintWallError()
-
     if direction == "d":
         player.current_cell_x += 1
         if player.current_cell_x <= room1.size_x:
@@ -58,7 +54,8 @@ while moving:
         else:
             player.current_cell_x -= 1
             PrintWallError()
-
     if direction == "quit":
         moving = False  # exit loop
         print("User stopped moving")
+
+
