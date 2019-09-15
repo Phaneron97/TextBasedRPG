@@ -16,7 +16,7 @@ moving = True
 while moving:
 
     direction = input("> ")
-
+    # TODO: Move code within if statements to method
     if direction == "w":
         player.current_cell_y += 1
         if player.current_cell_y <= room1.size_y:
@@ -52,6 +52,6 @@ while moving:
     if direction == "quit":
         moving = False  # exit loop
 
-print("Code ends here")
+print("User stopped moving")
 
 
