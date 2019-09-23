@@ -3,9 +3,10 @@ from Classes import *
 # Objects here
 player = Player(1, 1)
 
+# Variables here
+moving = True
 
-
-# room1 = Room(3, 3)
+room1 = Room(3, 3)
 # room2 = Room(5, 5)
 
 # TODO: instance new rooms with loop
@@ -13,9 +14,9 @@ player = Player(1, 1)
 # for room in rooms:
 #     rooms.append(room)
 #     print(rooms[i])
-
-# Locally used variables here
-moving = True
+# for i in range(10):
+#     Room(10, 10)
+#     print(i + Room)s
 
 
 # TODO: Run methods from Methods.py
@@ -26,6 +27,11 @@ def PrintPlayerPos():
 
 def PrintWallError():
     print("You reached the wall of the room you're in")
+
+
+def NewRoom(new_room_x, new_room_y):
+    room = Room(new_room_x, new_room_y)
+    return room
 
 
 # TODO: Check every room instead of room1
@@ -41,7 +47,6 @@ def CheckDoorEvent():
         check_door_counter += 1
 
 
-# TODO:
 while moving:
     # clear()
     i = 1
